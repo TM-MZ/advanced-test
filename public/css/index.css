@@ -1,0 +1,115 @@
+  .form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  label span {
+    color: red;
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  .name-input {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .name-input input {
+    width: 200px;
+  }
+
+  .familyname {
+    margin-right: 10px;
+  }
+
+  .postcode-form {
+    display: flex;
+    align-items: center;
+  }
+
+  table td {
+    width: 400px;
+    padding: 15px 0;
+  }
+
+  table th {
+    text-align: left;
+    padding-right: 20px;
+  }
+
+  td p {
+    color: #999;
+    padding: 5px;
+  }
+
+  input,
+  textarea {
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+
+  input {
+    width: 100%;
+    height: 40px;
+  }
+
+  input[type="radio"] {
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+
+  .submit-button {
+    width: 100px;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .gender-title {
+    position: relative;
+    top: -10px;
+  }
+
+  .opinion-title {
+    position: relative;
+    top: 10px;
+    vertical-align: top;
+  }
+
+  .radio {
+    display: flex;
+    /* align-items: center; */
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+    /* top: 5px; */
+  }
+
+  .postcode-label {
+    margin: 0 5px;
+    color: black;
+    font-weight: bold;
+  }
+
+  .error-text {
+    font-size: 12px;
+    color: red;
+  }
