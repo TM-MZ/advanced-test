@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\postcode;
 
 class ContactRequest extends FormRequest
 {
@@ -28,7 +29,7 @@ class ContactRequest extends FormRequest
             'familyname'=>'required',
             'firstname'=>'required',
             'email'=>'required|email|max:255|unique:App\Models\Contact,email',
-            'postcode'=>'required|min:8|max:8',
+            'postcode'=>['required','min:8','max:8',new postcode],
             'address'=>'required|max:255',
             'building_name'=>'max:255|nullable',
             'opinion'=>'required|max:120'

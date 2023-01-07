@@ -12,19 +12,11 @@
         <td>
           <div class="name-input">
             <div class="familyname">
-              @empty($items['familyname'])
-              <input type="text" id="familyname" name="familyname" value="{{old('familyname')}}" required>
-              @else
-              <input type="text" id="familyname" name="familyname" value="{{$items['familyname']}}" required>
-              @endempty
+              <input type="text" id="familyname" name="familyname" value="{{!empty($items['familyname']) ? $items['familyname'] : old('familyname')}}" required>
               <p>例）山田</p>
             </div>
             <div>
-              @empty($items['firstname'])
-              <input type="text" id="firstname" name="firstname" value="{{old('firstname')}}" required>
-              @else
-              <input type="text" id="firstname" name="firstname" value="{{$items['firstname']}}" required>
-              @endempty
+              <input type="text" id="firstname" name="firstname" value="{{!empty($items['firstname']) ? $items['firstname'] : old('firstname')}}" required>
               <p>例）太郎</p>
             </div>
           </div>
@@ -61,11 +53,7 @@
         <th><label for="email">メールアドレス<span>※</span></label></th>
         <td>
           <div>
-            @empty($items['email'])
-            <input type="email" id="email" name="email" value="{{old('email')}}" required>
-            @else
-            <input type="email" id="email" name="email" value="{{$items['email']}}" required>
-            @endempty
+            <input type="email" id="email" name="email" value="{{!empty($items['email']) ? $items['email'] : old('email')}}" required>
             <p>例）　test@example.com</p>
           </div>
           @error('email')
@@ -78,11 +66,7 @@
         <td>
           <div class="postcode-form">
             <p class="postcode-label">〒</p>
-            @empty($items['postcode'])
-            <input type="text" id="postcode" name="postcode" class="p-postal-code" size="8" minlength="8" maxlength="8" value="{{old('postcode')}}" onblur="toHalfWidth(this)" required>
-            @else
-            <input type="text" id="postcode" name="postcode" class="p-postal-code" size="8" minlength="8" maxlength="8" value="{{$items['postcode']}}" onblur="toHalfWidth(this)" required>
-            @endempty
+            <input type="text" id="postcode" name="postcode" class="p-postal-code" size="8" minlength="8" maxlength="8" value="{{!empty($items['postcode']) ? $items['postcode'] : old('postcode')}}" onblur="toHalfWidth(this)" required>
             <input type="hidden" class="p-country-name" value="Japan">
           </div>
           <p>例）　123-4567</p>
@@ -94,11 +78,7 @@
       <tr>
         <th><label for="address">住所<span>※</span></label></th>
         <td>
-          @empty($items['address'])
-          <input type="text" id="address" name="address" class="p-region p-locality p-street-address p-extended-address" value="{{old('address')}}" required>
-          @else
-          <input type="text" id="address" name="address" class="p-region p-locality p-street-address p-extended-address" value="{{$items['address']}}" required>
-          @endempty
+          <input type="text" id="address" name="address" class="p-region p-locality p-street-address p-extended-address" value="{{!empty($items['address']) ? $items['address'] : old('address')}}" required>
           <p>例）　東京都渋谷区千駄ヶ谷1-2-3</p>
           @error('address')
           <p class="error-text">{{$message}}</p>
@@ -108,11 +88,7 @@
       <tr>
         <th><label for="building_name">建物名<span></span></label></th>
         <td>
-          @empty($items['building_name'])
-          <input type="text" id="building_name" name="building_name" value="{{old('building_name')}}">
-          @else
-          <input type="text" id="building_name" name="building_name" value="{{$items['building_name']}}">
-          @endempty
+          <input type="text" id="building_name" name="building_name" value="{{!empty($items['building_name']) ? $items['building_name'] : old('building_name')}}">
           <p>例）　千駄ヶ谷マンション101</p>
           @error('building_name')
           <p class="error-text">{{$message}}</p>
@@ -122,11 +98,7 @@
       <tr>
         <th class="opinion-title"><label for="opinion">ご意見<span>※</span></label></th>
         <td>
-          @empty($items['opinion'])
-          <textarea id="opinion" name="opinion" cols="40" rows="4" maxlength="120" required>{{old('opinion')}}</textarea>
-          @else
-          <textarea id="opinion" name="opinion" cols="40" rows="4" maxlength="120" required>{{$items['opinion']}}</textarea>
-          @endempty
+          <textarea id="opinion" name="opinion" cols="40" rows="4" maxlength="120" required>{{!empty($items['opinion']) ? $items['opinion'] : old('opinion')}}</textarea>
           @error('opinion')
           <p class="error-text">{{$message}}</p>
           @enderror

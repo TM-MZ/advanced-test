@@ -90,12 +90,12 @@ class ContactController extends Controller
     }
     public function show(Request $request)
     {
+
         $name = $request->name;
         $gender = $request->gender;
         $email = $request->email;
         $startdate = $request->startdate;
         $enddate = $request->enddate;
-
         $query = Contact::query();
             //nameが入力されている
         if ($name) {
@@ -107,11 +107,11 @@ class ContactController extends Controller
         }
             //startdateが入力されている
         if ($startdate) {
-            $query->where('created_at', '>', $startdate);
+            $query->whereDate('created_at', '>=', $startdate);
         }
             //enddateが入力されている
         if ($enddate) {
-            $query->where('created_at', '<', $enddate);
+            $query->whereDate('created_at', '<=', $enddate);
         }
                     //性別が「全て」以外
         if ($gender != "all") {

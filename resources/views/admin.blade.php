@@ -12,11 +12,7 @@
         <th>お名前</th>
         <td>
           <div class="first-tr">
-            @empty($search['name'])
-            <input type="text" name="name">
-            @else
-            <input type="text" name="name" value="{{$search['name']}}">
-            @endempty
+            <input type="text" name="name" value="{{!empty($search['name']) ? $search['name'] : "" }}">
             <div class="radio">
               <legend for="gender">性別</legend>
               @empty($search['gender'])
@@ -42,17 +38,9 @@
         <th>登録日</th>
         <td>
           <div class="date-input">
-            @empty($search['startdate'])
-            <input type="date" name="startdate">
-            @else
-            <input type="date" name="startdate" value="{{$search['startdate']}}">
-            @endempty
+            <input type="date" name="startdate" value="{{!empty($search['startdate']) ? $search['startdate'] : "" }}">
             <span>-</span>
-            @empty($search['enddate'])
-            <input type="date" name="enddate">
-            @else
-            <input type="date" name="enddate" value="{{$search['enddate']}}">
-            @endempty
+            <input type="date" name="enddate" value="{{!empty($search['enddate']) ? $search['enddate'] : "" }}">
           </div>
         </td>
       </tr>
@@ -62,7 +50,7 @@
           @empty($search['email'])
           <input type="text" name="email">
           @else
-          <input type="text" name="email" value="{{$search['email']}}">
+          <input type="text" name="email" value="{{!empty($search['email']) ? $search['email'] : "" }}">
           @endempty
         </td>
       </tr>
