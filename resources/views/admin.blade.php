@@ -47,11 +47,7 @@
       <tr>
         <th>メールアドレス</th>
         <td>
-          @empty($search['email'])
-          <input type="text" name="email">
-          @else
           <input type="text" name="email" value="{{!empty($search['email']) ? $search['email'] : "" }}">
-          @endempty
         </td>
       </tr>
     </table>
@@ -71,6 +67,7 @@
     <th>ご意見</th>
     <th></th>
   </tr>
+  @if(count($contacts)>0)
   @foreach($contacts as $contact)
   <tr>
     <td>{{$contact->id}}</td>
@@ -100,5 +97,10 @@
     </td>
   </tr>
   @endforeach
+  @else
+  <tr class="nodeta">
+    <td colspan="6">該当するデータがありません。</td>
+  </tr>
+  @endif
 </table>
 @endsection

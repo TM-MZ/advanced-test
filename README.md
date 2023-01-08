@@ -14,6 +14,8 @@
 ## 環境
 Laravel 9.x
 PaginationはBootstrap
+住所の自動入力に、以下のライブラリを使用させていただいています。
+https://github.com/yubinbango/yubinbango
 
 ## テーブル設計、ER図は作成していません
 

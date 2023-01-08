@@ -1,6 +1,7 @@
 @extends('layouts.default')
 @section('title','お問い合わせ')
 <link rel="stylesheet" href="{{asset('/css/index.css')}}">
+<script src="{{asset('/js/index.js')}}"></script>
 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 @section('content')
 <form action="/" method="POST" class="h-adr">
@@ -53,7 +54,7 @@
         <th><label for="email">メールアドレス<span>※</span></label></th>
         <td>
           <div>
-            <input type="email" id="email" name="email" value="{{!empty($items['email']) ? $items['email'] : old('email')}}" required>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{!empty($items['email']) ? $items['email'] : old('email')}}" required>
             <p>例）　test@example.com</p>
           </div>
           @error('email')
@@ -66,7 +67,7 @@
         <td>
           <div class="postcode-form">
             <p class="postcode-label">〒</p>
-            <input type="text" id="postcode" name="postcode" class="p-postal-code" size="8" minlength="8" maxlength="8" value="{{!empty($items['postcode']) ? $items['postcode'] : old('postcode')}}" onblur="toHalfWidth(this)" required>
+            <input type="text" id="postcode" name="postcode" class="p-postal-code" size="8" minlength="8" maxlength="8" pattern="\d{3}-?\d{4}" value="{{!empty($items['postcode']) ? $items['postcode'] : old('postcode')}}" onblur="toHalfWidth(this)" required>
             <input type="hidden" class="p-country-name" value="Japan">
           </div>
           <p>例）　123-4567</p>
